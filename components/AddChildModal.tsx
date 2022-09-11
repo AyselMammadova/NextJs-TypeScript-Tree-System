@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {Modal, Box, Typography, FormControl, InputLabel, Input, Button} from '@mui/material';
+import {Modal, Box, Typography, FormControl, TextField, Button} from '@mui/material';
 
 interface ModalProps {
     open: boolean;
@@ -19,11 +19,6 @@ const modalStyle = {
     p: 4,
 };
 
-const inputStyle = {
-    bgcolor: 'white',
-    margin: '15px 0',
-    border: '2px solid #000'
-}
 
 const AddChildModal: React.FC<ModalProps> = ({ 
     open, 
@@ -31,7 +26,7 @@ const AddChildModal: React.FC<ModalProps> = ({
     onSubmit 
 }) => {
 
-const [name, setName] = useState('');
+const [memberName, setMemberName] = useState('');
   return (
     <Modal open={open}
     onClose={handleClose}
@@ -42,17 +37,22 @@ const [name, setName] = useState('');
             <Typography id="modal-modal-title" variant="h6" component="h2">
             Kateqoriya əlavə et
             </Typography>
-            <FormControl id="modal-modal-description">
-                <InputLabel htmlFor="my-input" 
-                    sx={{transformOrigin: 'center left'}}>
-                    Yeni kateqoriya
-                </InputLabel>
-                <Input id="my-input" 
-                    sx={inputStyle}
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
+            <FormControl id="modal-modal-description" sx={{width: '100%'}}>
+                <TextField
+                    id="outlined-name"
+                    label="Yeni kateqoriya"
+                    sx={{my: 2}}
+                    value={memberName}
+                    onChange={(e) => setMemberName(e.target.value)}
                 />
-                <Button disabled={!name} variant='contained' onClick={() => onSubmit(name)}>Əlavə et</Button>
+                <Button 
+                    disabled={!memberName} 
+                    variant='contained' 
+                    sx={{p: '12px 16px', width: 'max-content', ml: 'auto'}}
+                    onClick={() => {
+                        onSubmit(memberName);
+                        handleClose();
+                    }}>Əlavə et</Button>
             </FormControl>
         </Box>
 
