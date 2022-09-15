@@ -20,6 +20,7 @@ const modalStyle = {
 };
 
 
+
 const AddChildModal: React.FC<ModalProps> = ({ 
     open, 
     handleClose, 
@@ -39,7 +40,8 @@ const [memberName, setMemberName] = useState('');
             </Typography>
             <FormControl id="modal-modal-description" sx={{width: '100%'}}>
                 <TextField
-                    id="outlined-name"
+                    id="outlined-basic"
+                    variant="outlined"
                     label="Yeni kateqoriya"
                     sx={{my: 2}}
                     value={memberName}
