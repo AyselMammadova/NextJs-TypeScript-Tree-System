@@ -40,9 +40,10 @@ const [memberName, setMemberName] = useState('');
             </Typography>
             <FormControl id="modal-modal-description" sx={{width: '100%'}}>
                 <TextField
-                    id="outlined-basic"
-                    variant="outlined"
-                    label="Yeni kateqoriya"
+                    id='outlined-basic'
+                    variant='outlined'
+                    color='success'
+                    label='Yeni kateqoriya'
                     sx={{my: 2}}
                     value={memberName}
                     onChange={(e) => setMemberName(e.target.value)}
@@ -50,6 +51,7 @@ const [memberName, setMemberName] = useState('');
                 <Button 
                     disabled={!memberName} 
                     variant='contained' 
+                    color='success'
                     sx={{p: '12px 16px', width: 'max-content', ml: 'auto'}}
                     onClick={() => {
                         onSubmit(memberName);

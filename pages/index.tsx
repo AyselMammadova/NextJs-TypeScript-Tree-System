@@ -4,7 +4,6 @@ import {CustomNodeElementProps, RawNodeDatum, TreeNodeDatum} from 'react-d3-tree
 import {Box, Typography} from '@mui/material';
 import AddChildModal from '../components/AddChildModal';
 import { v4 } from 'uuid';
-import { TreeNodeEventCallback } from 'react-d3-tree/lib/Tree/types';
 
 
 const Tree = dynamic(() => import('react-d3-tree'), {
@@ -148,7 +147,6 @@ export default function Home() {
 
       <Tree data={tree} 
         zoomable={true}
-        onNodeClick={handleOpen} 
         translate={{
           x: 200,
           y: 200
