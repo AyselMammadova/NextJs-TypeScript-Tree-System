@@ -5,7 +5,10 @@ const nextConfig = {
   images: {
     loader: "akamai",
     path: ""
-  }
+  },
+  basePath: "/NextJs-TypeScript-Tree-System",
+  assetPrefix: "/NextJs-TypeScript-Tree-System"
+
 }
 
 module.exports = nextConfig
