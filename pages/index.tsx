@@ -94,8 +94,6 @@ export default function Home() {
     const handleOpen = (datum: TreeNodeDatum) => {
       setNode(datum);
     };
-
-    console.log(node);
     
     const handleClose = () => setNode(undefined);
 
